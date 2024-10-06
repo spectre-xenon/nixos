@@ -4,6 +4,5 @@
     gnumake
     gcc
     unzip
-    neovim
   ];
 }

@@ -1,5 +1,6 @@
 {
   programs.neovim = {
-    enable = false;
+    enable = true;
   };
+  stylix.targets.neovim.enable = false;
 }
