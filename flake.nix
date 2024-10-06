@@ -16,50 +16,53 @@
     ags.url = "github:Aylur/ags";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... } @ inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations = {
-        asus =
-          let
-            username = "xen";
-          in
-          nixpkgs.lib.nixosSystem {
-            system = { inherit system; };
-            specialArgs = { inherit inputs; };
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    stylix,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    nixosConfigurations = {
+      asus = let
+        username = "xen";
+      in
+        nixpkgs.lib.nixosSystem {
+          system = {inherit system;};
+          specialArgs = {inherit inputs;};
 
-            modules = [
-              ./hosts/asus
-              ./users/${username}/nixos.nix
+          modules = [
+            ./hosts/asus
+            ./users/${username}/nixos.nix
 
-              stylix.nixosModules.stylix
+            stylix.nixosModules.stylix
 
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.extraSpecialArgs = {
-                  inherit username;
-                  inherit inputs;
-                };
-                home-manager.users.${username} = import ./users/${username}/home.nix;
-              }
-            ];
-          };
-      };
-
-      # Development shell
-      devShells.${system}.default = pkgs.mkShell {
-        buildInputs = with pkgs;[
-          nil
-          nixpkgs-fmt
-        ];
-        shellHook = ''
-          echo nix dev shell inited!
-        '';
-      };
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                inherit username;
+                inherit inputs;
+              };
+              home-manager.users.${username} = import ./users/${username}/home.nix;
+            }
+          ];
+        };
     };
+
+    # Development shell
+    devShells.${system}.default = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        nil
+        alejandra
+      ];
+      shellHook = ''
+        echo nix dev shell inited!
+      '';
+    };
+  };
 }

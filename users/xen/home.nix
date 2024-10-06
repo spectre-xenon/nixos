@@ -14,5 +14,6 @@
     ../../modules/home/tofi.nix
     ../../modules/home/ags
     ../../modules/home/gtk.nix
+    ../../modules/home/packages.nix
   ];
 }

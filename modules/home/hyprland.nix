@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Additional packages for hyprland
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     slurp
     grim
     wl-clipboard
@@ -206,4 +206,3 @@
     };
   };
 }
-

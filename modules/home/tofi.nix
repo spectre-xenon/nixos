@@ -1,7 +1,7 @@
 {
   programs.tofi = {
     enable = true;
-    settings = { 
+    settings = {
       anchor = "top";
       width = "100%";
       height = 30;

@@ -1,15 +1,17 @@
-{ pkgs, inputs, ... }:
-let
-  input-hypr = inputs.hyprland.packages.${pkgs.system};
-in
 {
+  pkgs,
+  inputs,
+  ...
+}: let
+  input-hypr = inputs.hyprland.packages.${pkgs.system};
+in {
   # Needed system Packages
   environment.systemPackages = with pkgs; [
     brightnessctl
   ];
 
   # Env
-  environment.sessionVariables = { };
+  environment.sessionVariables = {};
 
   # Hypr
   programs.hyprland = {

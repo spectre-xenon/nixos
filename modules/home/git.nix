@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Github cli
-  home.packages = [ pkgs.gh ];
+  home.packages = [pkgs.gh];
 
   # basic configuration of git
   programs.git = {
