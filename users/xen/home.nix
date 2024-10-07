@@ -12,6 +12,7 @@
     ../../modules/home/starship
     ../../modules/home/tofi.nix
     ../../modules/home/ags
+    ../../modules/home/neovim
     ../../modules/home/gtk.nix
     ../../modules/home/packages.nix
   ];
