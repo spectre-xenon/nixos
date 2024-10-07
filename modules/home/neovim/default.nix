@@ -39,7 +39,6 @@
             base0E = '${base0E}',
             base0F = '${base0F}',
           },
-          config = true,
         }
       '';
   };
