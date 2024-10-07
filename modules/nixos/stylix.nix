@@ -3,7 +3,7 @@
     enable = true;
 
     # ColorScheme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/github.yaml";
     # Wallpaper
     image = ../../wallpaper.jpg;
     # Cursor
