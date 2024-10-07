@@ -17,7 +17,7 @@
 
   # set Colorscheme using stylix colors
   stylix.targets.neovim.enable = false;
-  home.file.".config/nvim/lua/plugins/base16.lua".text = with config.lib.stylix.colors.withHashtag; ''
+  xdg.configFile."nvim/lua/plugins/base16.lua".text = with config.lib.stylix.colors.withHashtag; ''
     return {
       'RRethy/base16-nvim',
       config = function()
