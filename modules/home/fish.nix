@@ -14,7 +14,7 @@
 
     shellAliases = {
       c = "clear";
-      ls = "eza --icons -la";
+      ls = "eza --icons -la --group-directories-first";
       rebuild-nix = "~/nixos/rebuild";
     };
 
