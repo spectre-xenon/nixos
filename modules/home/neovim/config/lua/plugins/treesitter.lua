@@ -18,6 +18,7 @@ return {
   ---@type TSConfig
   ---@diagnostic disable-next-line: missing-fields
   opts = {
+	ass = true,
     auto_install = true,
     highlight = { enable = true },
     indent = { enable = true },
