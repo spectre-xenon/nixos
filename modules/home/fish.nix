@@ -8,6 +8,7 @@
 
     shellAliases = {
       c = "clear";
+      rebuild-nix = "~/nixos/rebuild";
     };
 
     plugins = [
