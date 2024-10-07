@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   environment.variables = {
-    EDITOR = "code";
-    VISUAL = "code";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
