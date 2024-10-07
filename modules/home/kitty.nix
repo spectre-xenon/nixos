@@ -1,8 +1,4 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    btop
-  ];
-
+{
   programs.kitty = {
     enable = true;
     settings = {

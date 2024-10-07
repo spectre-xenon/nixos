@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [
+    btop
+    eza
+    bat
+  ];
+
   programs.fish = {
     enable = true;
 
@@ -8,6 +14,7 @@
 
     shellAliases = {
       c = "clear";
+      ls = "eza --icons -la";
       rebuild-nix = "~/nixos/rebuild";
     };
 
