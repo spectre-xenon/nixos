@@ -3,7 +3,7 @@
     enable = true;
 
     # ColorScheme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/nebula.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # Wallpaper
     image = ../../wallpaper.jpg;
     # Cursor
