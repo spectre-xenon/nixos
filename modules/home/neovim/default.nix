@@ -6,7 +6,13 @@
     vimdiffAlias = true;
   };
 
-  xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink ./config;
+  xdg.configFile."nvim/lua" = {
+    source = ./config/lua;
+    recursive = true;
+  };
+  xdg.configFile."nvim/init.lua" = {
+    source = ./config/init.lua;
+  };
 
   stylix.targets.neovim.enable = false;
 }
