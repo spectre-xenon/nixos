@@ -3,7 +3,7 @@
     enable = true;
 
     # ColorScheme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/github.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/nebula.yaml";
     # Wallpaper
     image = ../../wallpaper.jpg;
     # Cursor
