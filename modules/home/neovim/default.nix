@@ -10,9 +10,9 @@
     source = ./config/lua;
     recursive = true;
   };
-  xdg.configFile."nvim/init.lua" = {
-    source = ./config/init.lua;
-  };
+  # xdg.configFile."nvim/init.lua" = {
+  #   source = ./config/init.lua;
+  # };
 
-  stylix.targets.neovim.enable = false;
+  # stylix.targets.neovim.enable = false;
 }
