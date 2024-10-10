@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  # Dependancies
+  home.packages = with pkgs; [
+    ripgrep
+    fzf
+  ];
+
   programs.nixvim = {
     enable = true;
 
