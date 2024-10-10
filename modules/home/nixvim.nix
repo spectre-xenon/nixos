@@ -71,11 +71,15 @@
       lsp = {
         enable = true;
         servers = {
+          lua-ls.enable = true;
+          ts_ls = {
+            enable = true;
+            autostart = true;
+          };
           nil_ls = {
             enable = true;
             autostart = true;
           };
-          lua-ls.enable = true;
         };
       };
       # Completions
@@ -93,6 +97,7 @@
             "<CR>" = "cmp.mapping.confirm({ select = true })";
             "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
             "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<C-Space>" = "cmp.mapping.complete()";
           };
         };
       };
