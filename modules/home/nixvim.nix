@@ -88,13 +88,13 @@
           };
         };
         keymaps = {
-          "<leader>ff" = {
+          "<leader><space>" = {
             action = "find_files";
             options = {
               desc = "Find project files";
             };
           };
-          "<leader>fg" = {
+          "<leader>/" = {
             action = "live_grep";
             options = {
               desc = "Find text";
@@ -104,18 +104,6 @@
             action = "buffers";
             options = {
               desc = "Buffers";
-            };
-          };
-          "<C-p>" = {
-            action = "git_files";
-            options = {
-              desc = "Search git files";
-            };
-          };
-          "<leader>gc" = {
-            action = "git_commits";
-            options = {
-              desc = "Commits";
             };
           };
         };
@@ -133,7 +121,7 @@
       lsp = {
         enable = true;
         servers = {
-          lua-ls.enable = true;
+          lua_ls.enable = true;
           ts_ls = {
             enable = true;
             autostart = true;
