@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   imports = [
     ../../modules/home/core.nix
 
@@ -12,7 +12,8 @@
     ../../modules/home/starship
     ../../modules/home/tofi.nix
     ../../modules/home/ags
-    ../../modules/home/neovim
+    inputs.nixvim.homeManagerModules.nixvim
+    ../../modules/home/nixvim.nix
     ../../modules/home/gtk.nix
     ../../modules/home/packages.nix
   ];
