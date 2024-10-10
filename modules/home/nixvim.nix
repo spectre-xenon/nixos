@@ -57,7 +57,63 @@
     plugins = {
       # Lualine
       lualine.enable = true;
-      telescope.enable = true;
+      telescope = {
+        enable = true;
+        extensions = {
+          ui-select = {
+            enable = true;
+          };
+          frecency = {
+            enable = true;
+            settings.disable_devicons = true;
+          };
+          fzf-native = {
+            enable = true;
+          };
+        };
+        settings = {
+          defaults = {
+            layout_config = {
+              horizontal = {
+                prompt_position = "top";
+              };
+            };
+            sorting_strategy = "ascending";
+          };
+        };
+        keymaps = {
+          "<leader>ff" = {
+            action = "find_files";
+            options = {
+              desc = "Find project files";
+            };
+          };
+          "<leader>fg" = {
+            action = "live_grep";
+            options = {
+              desc = "Find text";
+            };
+          };
+          "<leader>fb" = {
+            action = "buffers";
+            options = {
+              desc = "Buffers";
+            };
+          };
+          "<C-p>" = {
+            action = "git_files";
+            options = {
+              desc = "Search git files";
+            };
+          };
+          "<leader>gc" = {
+            action = "git_commits";
+            options = {
+              desc = "Commits";
+            };
+          };
+        };
+      };
       # Treesitter
       treesitter = {
         enable = true;
