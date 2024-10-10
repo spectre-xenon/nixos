@@ -71,7 +71,11 @@
       lsp = {
         enable = true;
         servers = {
-          nil_ls.enable = true;
+          nil_ls = {
+            enable = true;
+            autostart = true;
+          };
+          lua-ls.enable = true;
         };
       };
       # Completions
@@ -92,6 +96,10 @@
           };
         };
       };
+      # Icons
+      web-devicons.enable = true;
+      # Autopairs
+      nvim-autopairs.enable = true;
     };
   };
 }
