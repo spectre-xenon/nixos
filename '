@@ -10,6 +10,7 @@
       maplocalleader = " ";
     };
 
+
     opts = {
       # Make line numbers default
       number = true;
