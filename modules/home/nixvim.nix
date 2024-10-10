@@ -17,7 +17,7 @@
       #  Experiment for yourself to see if you like it!
       relativenumber = true;
       # Disable mouse mode
-      mouse = " ";
+      mouse = null;
       # Don't show the mode, since it's already in the status line
       showmode = false;
       # Enable break indent
