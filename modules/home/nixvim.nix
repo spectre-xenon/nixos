@@ -57,6 +57,7 @@
     plugins = {
       # Lualine
       lualine.enable = true;
+      telescope.enable = true;
       # Treesitter
       treesitter = {
         enable = true;
