@@ -21,6 +21,7 @@
       # Don't show the mode, since it's already in the status line
       showmode = false;
       # Enable break indent
+      breakindent = true;
       smartindent = false;
       # Save undo history
       undofile = true;
