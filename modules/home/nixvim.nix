@@ -100,6 +100,8 @@
       web-devicons.enable = true;
       # Autopairs
       nvim-autopairs.enable = true;
+      # So cool lsp
+      fidget.enable = true;
     };
   };
 }
