@@ -22,9 +22,11 @@ return {
     },
     formatters_by_ft = {
       lua = { "stylua" },
-      nix = { "alejandra" }
+      nix = { "alejandra" },
     },
-    format_on_save = {},
-
+    format_on_save = {
+    lsp_format = "fallback",
+      timeout_ms = 500,
+    },
   }
 }
