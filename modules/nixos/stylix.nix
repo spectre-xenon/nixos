@@ -17,12 +17,12 @@
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
+        package = pkgs.roboto;
+        name = "Roboto Serif";
       };
       serif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Serif";
+        package = pkgs.roboto;
+        name = "Roboto Serif";
       };
       # Sizes
       sizes = {
