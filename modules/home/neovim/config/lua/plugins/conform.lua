@@ -7,7 +7,7 @@ return {
     {
       "<leader>f",
       function()
-        require("conform").format({ lsp_format = "fallback" })
+        require("conform").format({ async = false, quiet = false, timeout_ms = 3000, lsp_format = "fallback" })
       end,
       mode = { "n", "v" },
       desc = "Format Injected Langs",
