@@ -85,7 +85,9 @@ return {
             },
           },
         },
-        nil_ls={},
+        nil_ls={
+           formatter = { command = {"alejandra"}},
+        },
         ts_ls={},
       },
       -- you can do any additional lsp server setup here

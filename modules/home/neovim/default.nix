@@ -4,6 +4,8 @@
   ...
 }: {
   home.packages = with pkgs; [
+    # needed packages
+    ripgrep
     # Lsp server
     lua-language-server
     typescript-language-server
