@@ -3,16 +3,6 @@ return {
   lazy = true,
   event = { "BufWritePre" },
   cmd = "ConformInfo",
-  keys = {
-    {
-      "<leader>f",
-      function()
-        require("conform").format({ async = false, quiet = false, timeout_ms = 3000, lsp_format = "fallback" })
-      end,
-      mode = { "n", "v" },
-      desc = "Format Injected Langs",
-    },
-  },
   ---@type conform.setupOpts
   opts = {
     default_format_opts = {
@@ -32,6 +22,16 @@ return {
     },
     formatters = {
       injected = { options = { ignore_errors = true } },
+    },
+  },
+  keys = {
+    {
+      "<leader>f",
+      function()
+        require("conform").format({ async = false, quiet = false, timeout_ms = 3000, lsp_format = "fallback" })
+      end,
+      mode = { "n", "v" },
+      desc = "Format Injected Langs",
     },
   },
 }
