@@ -102,12 +102,6 @@
               desc = "Find text";
             };
           };
-          "<leader>fb" = {
-            action = "buffers";
-            options = {
-              desc = "Buffers";
-            };
-          };
         };
       };
       # Treesitter
