@@ -1,4 +1,13 @@
-{config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
+  # Lsp server
+  home.packages = with pkgs; [
+    lua-language-server
+  ];
+
   programs.neovim = {
     enable = true;
     viAlias = true;
