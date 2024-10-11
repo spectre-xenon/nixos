@@ -129,7 +129,6 @@ return {
     })
 
     local function on_supports_method(method, fn)
-      M._supports_method[method] = M._supports_method[method] or setmetatable({}, { __mode = "k" })
       return vim.api.nvim_create_autocmd("User", {
         pattern = "LspSupportsMethod",
         callback = function(args)
