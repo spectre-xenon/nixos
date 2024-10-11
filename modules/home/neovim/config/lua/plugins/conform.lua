@@ -4,7 +4,7 @@ return {
   cmd = "ConformInfo",
   keys = {
     {
-      "<leader>cF",
+      "<leader>f",
       function()
         require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
       end,
@@ -16,8 +16,8 @@ return {
   opts = {
     default_format_opts = {
       timeout_ms = 3000,
-      async = false,           -- not recommended to change
-      quiet = false,           -- not recommended to change
+      async = false, -- not recommended to change
+      quiet = false, -- not recommended to change
       lsp_format = "fallback", -- not recommended to change
     },
     formatters_by_ft = {
@@ -25,8 +25,8 @@ return {
       nix = { "alejandra" },
     },
     format_on_save = {
-    lsp_format = "fallback",
+      lsp_format = "fallback",
       timeout_ms = 500,
     },
-  }
+  },
 }
