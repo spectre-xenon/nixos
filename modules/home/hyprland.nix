@@ -4,6 +4,7 @@
     slurp
     grim
     wl-clipboard
+    playerctl
   ];
 
   # Config

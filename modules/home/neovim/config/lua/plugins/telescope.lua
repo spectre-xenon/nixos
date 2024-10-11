@@ -3,6 +3,7 @@ return {
   version = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
 
@@ -23,6 +24,7 @@ return {
     -- To get fzf loaded and working with telescope, you need to call
     -- load_extension, somewhere after setup function:
     require('telescope').load_extension('fzf')
+    require('telescope').load_extension('ui-select')
   end,
 
   keys = {
