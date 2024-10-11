@@ -18,6 +18,14 @@ return {
           -- prefix = "icons",
         },
         severity_sort = true,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = Icons.diagnostics.Error,
+            [vim.diagnostic.severity.WARN] = Icons.diagnostics.Warn,
+            [vim.diagnostic.severity.HINT] = Icons.diagnostics.Hint,
+            [vim.diagnostic.severity.INFO] = Icons.diagnostics.Info,
+          },
+        },
       },
       -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
       -- Be aware that you also will need to properly configure your LSP server to
@@ -181,7 +189,7 @@ return {
     if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
       opts.diagnostics.virtual_text.prefix = vim.fn.has("nvim-0.10.0") == 0 and "●"
       or function(diagnostic)
-        local icons = LazyVim.config.icons.diagnostics
+        local icons = Icons.diagnostics
         for d, icon in pairs(icons) do
           if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
             return icon

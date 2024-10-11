@@ -1,5 +1,6 @@
 require 'options'
 require "remap"
+require("icons")
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
