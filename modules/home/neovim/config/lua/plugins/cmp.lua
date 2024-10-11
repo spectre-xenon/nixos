@@ -27,7 +27,7 @@ return {
       'confirm_done',
       cmp_autopairs.on_confirm_done()
     )
-    
+
     return {
       auto_brackets = {}, -- configure any filetype to auto add brackets
       completion = {
@@ -53,6 +53,7 @@ return {
         { name = "buffer" },
       }),
       formatting = {
+        ---@diagnostic disable-next-line: unused-local
         format = function(entry, item)
           local widths = {
             abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
