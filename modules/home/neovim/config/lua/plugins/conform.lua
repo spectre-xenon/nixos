@@ -28,5 +28,8 @@ return {
       lsp_format = "fallback",
       timeout_ms = 500,
     },
+    formatters = {
+      injected = { options = { ignore_errors = true } },
+    },
   },
 }
