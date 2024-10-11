@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  event ={ "BufReadPost", "BufNewFile", "BufWritePre" },
+  event = { "BufReadPost", "BufNewFile", "BufWritePre" },
   opts = function()
     ---@class PluginLspOpts
     local ret = {
@@ -85,10 +85,14 @@ return {
             },
           },
         },
-        nil_ls={
-           formatter = { command = {"alejandra"}},
-        },
-        ts_ls={},
+        nil_ls = {},
+        -- Web
+        ts_ls = {},
+        tailwindcss = {},
+        jsonls = {},
+        cssls = {},
+        html = {},
+        emmet_ls = {},
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -125,7 +129,7 @@ return {
         vim.keymap.set("n", "<leader>cc", vim.lsp.codelens.run)
         vim.keymap.set("n", "<leader>cC", vim.lsp.codelens.refresh)
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename)
-      end
+      end,
     })
 
     local function on_supports_method(method, fn)
@@ -182,14 +186,14 @@ return {
 
     if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
       opts.diagnostics.virtual_text.prefix = vim.fn.has("nvim-0.10.0") == 0 and "●"
-      or function(diagnostic)
-        local icons = Icons.diagnostics
-        for d, icon in pairs(icons) do
-          if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
-            return icon
+        or function(diagnostic)
+          local icons = Icons.diagnostics
+          for d, icon in pairs(icons) do
+            if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
+              return icon
+            end
           end
         end
-      end
     end
 
     vim.diagnostic.config(vim.deepcopy(opts.diagnostics))

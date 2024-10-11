@@ -9,13 +9,18 @@
     # Lsp server
     lua-language-server
     typescript-language-server
+    tailwindcss-language-server
+    vscode-langservers-extracted
+    emmet-language-server
     nil
     # Linters
     typos
     statix
+    eslint_d
     # Formatters
     stylua
     alejandra
+    prettierd
   ];
 
   programs.neovim = {

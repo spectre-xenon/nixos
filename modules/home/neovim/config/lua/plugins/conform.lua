@@ -14,6 +14,11 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       nix = { "alejandra" },
+      -- Web
+      javascript = { "prettierd" },
+      typescript = { "prettierd" },
+      javascriptreact = { "prettierd" },
+      typescriptreact = { "prettierd" },
       ["*"] = { "injected" },
     },
     format_on_save = {
