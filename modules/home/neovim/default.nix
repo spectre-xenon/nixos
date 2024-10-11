@@ -12,6 +12,7 @@
     nil
     # Linters
     typos
+    statix
     # Formatters
     stylua
     alejandra
