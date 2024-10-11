@@ -10,6 +10,8 @@
     lua-language-server
     typescript-language-server
     nil
+    # Linters
+    typos
     # Formatters
     stylua
     alejandra
