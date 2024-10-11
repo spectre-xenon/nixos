@@ -19,8 +19,15 @@ return {
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
+    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
     local defaults = require("cmp.config.default")()
     local auto_select = true
+    -- Autopairs
+    cmp.event:on(
+      'confirm_done',
+      cmp_autopairs.on_confirm_done()
+    )
+    
     return {
       auto_brackets = {}, -- configure any filetype to auto add brackets
       completion = {
