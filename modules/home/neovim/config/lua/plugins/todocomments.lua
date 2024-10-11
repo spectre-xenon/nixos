@@ -1,7 +1,7 @@
 return {
   "folke/todo-comments.nvim",
   cmd = { "TodoTrouble", "TodoTelescope" },
-  event = "LazyFile",
+  event ={ "BufReadPost", "BufNewFile", "BufWritePre" },
   opts = {},
   -- stylua: ignore
   keys = {
