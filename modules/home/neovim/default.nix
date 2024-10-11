@@ -6,6 +6,7 @@
   # Lsp server
   home.packages = with pkgs; [
     lua-language-server
+    typescript-language-server
     nil
   ];
 

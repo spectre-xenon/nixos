@@ -29,7 +29,7 @@ return {
       -- Be aware that you also will need to properly configure your LSP server to
       -- provide the code lenses.
       codelens = {
-        enabled = true,
+        enabled = false,
       },
       -- Enable lsp cursor word highlighting
       document_highlight = {
@@ -85,9 +85,8 @@ return {
             },
           },
         },
-        nil_ls={
-
-        }
+        nil_ls={},
+        ts_ls={},
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -108,7 +107,7 @@ return {
   config = function(_, opts)
     -- setup keymaps
     vim.api.nvim_create_autocmd("LspAttach", {
-      callback = function(args)
+      callback = function()
           vim.keymap.set("n", "<leader>cl", "<cmd>LspInfo<cr>")
           vim.keymap.set("n", "gd", vim.lsp.buf.definition)
           vim.keymap.set("n", "gr", vim.lsp.buf.references)
@@ -152,6 +151,7 @@ return {
     if vim.fn.has("nvim-0.10") == 1 then
       -- inlay hints
       if opts.inlay_hints.enabled then
+        ---@diagnostic disable-next-line: unused-local
         on_supports_method("textDocument/inlayHint", function(client, buffer)
           if
             vim.api.nvim_buf_is_valid(buffer)
@@ -165,6 +165,7 @@ return {
 
       -- code lens
       if opts.codelens.enabled and vim.lsp.codelens then
+        ---@diagnostic disable-next-line: unused-local
         on_supports_method("textDocument/codeLens", function(client, buffer)
           vim.lsp.codelens.refresh()
           vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
