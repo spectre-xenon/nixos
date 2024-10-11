@@ -81,9 +81,8 @@ return {
           scrollbar = '',
         },
         documentation = { -- no border; native-style scrollbar
-          border = nil,
+          border = 'rounded',
           scrollbar = '',
-          -- other options
         },
       }
     }
