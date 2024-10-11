@@ -75,6 +75,17 @@ return {
         },
       },
       sorting = defaults.sorting,
+      window = {
+        completion = { -- rounded border; thin-style scrollbar
+          border = 'rounded',
+          scrollbar = '',
+        },
+        documentation = { -- no border; native-style scrollbar
+          border = nil,
+          scrollbar = '',
+          -- other options
+        },
+      }
     }
   end,
 }
