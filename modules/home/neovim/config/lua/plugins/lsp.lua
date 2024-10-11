@@ -125,6 +125,7 @@ return {
           vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename)
           vim.keymap.set("n", "<leader>cA", LazyVim.lsp.action.source)
         end
+      end
     })
 
     -- diagnostics signs
