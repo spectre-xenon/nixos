@@ -5,7 +5,7 @@ return {
   },
   config = function()
     require('lualine').setup {
-      icons_enabled = true,
+      icons_enabled = false,
     }
   end,
 }
