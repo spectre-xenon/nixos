@@ -1,12 +1,21 @@
 return {
   "stevearc/conform.nvim",
   lazy = true,
+  event = { "BufWritePre" },
   cmd = "ConformInfo",
   keys = {
     {
       "<leader>f",
-      function()
-        require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
+      function(args)
+        local range = nil
+        if args.count ~= -1 then
+          local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+          range = {
+            start = { args.line1, 0 },
+            ["end"] = { args.line2, end_line:len() },
+          }
+        end
+        require("conform").format({ async = true, lsp_format = "fallback", range = range })
       end,
       mode = { "n", "v" },
       desc = "Format Injected Langs",
@@ -23,6 +32,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       nix = { "alejandra" },
+      ["*"] = { "injected" },
     },
     format_on_save = {
       lsp_format = "fallback",
