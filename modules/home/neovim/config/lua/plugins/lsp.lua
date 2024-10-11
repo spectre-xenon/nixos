@@ -18,14 +18,6 @@ return {
           -- prefix = "icons",
         },
         severity_sort = true,
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = Icons.diagnostics.Error,
-            [vim.diagnostic.severity.WARN] = Icons.diagnostics.Warn,
-            [vim.diagnostic.severity.HINT] = Icons.diagnostics.Hint,
-            [vim.diagnostic.severity.INFO] = Icons.diagnostics.Info,
-          },
-        },
       },
       -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
       -- Be aware that you also will need to properly configure your LSP server to
@@ -230,7 +222,7 @@ return {
       require("lspconfig")[server].setup(server_opts)
     end
 
-    for server, server_opts in pairs(servers) do
+    for server, _ in pairs(servers) do
       setup(server)
     end
   end,

@@ -3,11 +3,14 @@
   config,
   ...
 }: {
-  # Lsp server
   home.packages = with pkgs; [
+    # Lsp server
     lua-language-server
     typescript-language-server
     nil
+    # Formatters
+    stylua
+    alejandra
   ];
 
   programs.neovim = {
