@@ -128,6 +128,20 @@ return {
       end
     })
 
+    local function on_supports_method(method, fn)
+      M._supports_method[method] = M._supports_method[method] or setmetatable({}, { __mode = "k" })
+      return vim.api.nvim_create_autocmd("User", {
+        pattern = "LspSupportsMethod",
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          local buffer = args.data.buffer ---@type number
+          if client and method == args.data.method then
+            return fn(client, buffer)
+          end
+        end,
+      })
+    end
+
     -- diagnostics signs
     if vim.fn.has("nvim-0.10.0") == 0 then
       if type(opts.diagnostics.signs) ~= "boolean" then
@@ -142,7 +156,7 @@ return {
     if vim.fn.has("nvim-0.10") == 1 then
       -- inlay hints
       if opts.inlay_hints.enabled then
-        LazyVim.lsp.on_supports_method("textDocument/inlayHint", function(client, buffer)
+        on_supports_method("textDocument/inlayHint", function(client, buffer)
           if
             vim.api.nvim_buf_is_valid(buffer)
             and vim.bo[buffer].buftype == ""
@@ -155,7 +169,7 @@ return {
 
       -- code lens
       if opts.codelens.enabled and vim.lsp.codelens then
-        LazyVim.lsp.on_supports_method("textDocument/codeLens", function(client, buffer)
+        on_supports_method("textDocument/codeLens", function(client, buffer)
           vim.lsp.codelens.refresh()
           vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
             buffer = buffer,
