@@ -90,7 +90,13 @@ return {
         ts_ls = {},
         tailwindcss = {},
         jsonls = {},
-        cssls = {},
+        cssls = {
+          settings = {
+            css = {
+              validate = false,
+            },
+          },
+        },
         html = {},
         emmet_language_server = {},
       },
