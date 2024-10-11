@@ -33,7 +33,7 @@
     recursive = true;
   };
 
-  # set Colorscheme using stylix colors
+  # set asseess Colorscheme using stylix colors
   stylix.targets.neovim.enable = false;
   xdg.configFile."nvim/lua/plugins/base16.lua".text = with config.lib.stylix.colors.withHashtag; ''
     return {
