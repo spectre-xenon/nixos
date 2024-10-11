@@ -11,9 +11,9 @@
     ../../modules/home/fish.nix
     ../../modules/home/starship
     ../../modules/home/tofi.nix
-    ../../modules/home/ags
-    inputs.nixvim.homeManagerModules.nixvim
-    ../../modules/home/nixvim.nix
+    # inputs.nixvim.homeManagerModules.nixvim
+    # ../../modules/home/nixvim.nix
+    ../../modules/home/neovim
     ../../modules/home/gtk.nix
     ../../modules/home/packages.nix
   ];
