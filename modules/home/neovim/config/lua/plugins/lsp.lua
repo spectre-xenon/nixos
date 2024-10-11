@@ -221,5 +221,9 @@ return {
       end
       require("lspconfig")[server].setup(server_opts)
     end
+
+    for server, server_opts in pairs(servers) do
+      setup(server)
+    end
   end,
 }
