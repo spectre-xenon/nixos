@@ -7,6 +7,8 @@
 
   programs.nixvim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
 
     globals = {
       # Set <space> as the leader key
